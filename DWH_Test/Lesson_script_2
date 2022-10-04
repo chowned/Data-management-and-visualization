@@ -1,4 +1,6 @@
---Adding comment here for writing requirements
+-- Active: 1664349630889@@192.168.1.168@3306@Principale
+
+--
 
 SELECT city,
     month,
@@ -7,4 +9,42 @@ SELECT city,
         (PARTITION BY City
         ORDER BY Month
         ROWS UNBOUNDED PRECEDING) AS CumulSum
-FROM `Sales`
+FROM `Sales`;
+
+--
+SELECT city,
+    month,
+    amount,
+    SUM(amount) over
+    (partition by City
+    ) AS TotalPerCity
+FROM `Sales`;
+
+SELECT city,
+    month,
+    amount,
+    Sum(amount)
+    over
+    (
+    )
+     AS totalAmount,
+    SUM(amount) over
+    (partition by City
+    ) AS TotalPerCity,
+    SUM(amount) over
+    (partition by Month
+    ) AS TotalPerMonth,
+    amount/Sum(amount)
+    over
+    (
+    )
+     AS ratiototalAmount,
+    amount/SUM(amount) over
+    (partition by City
+    ) AS ratioTotalPerCity,
+    amount/SUM(amount) over
+    (partition by Month
+    ) AS ratioTotalPerMonth
+    
+
+FROM `Sales`;
