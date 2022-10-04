@@ -40,7 +40,17 @@ INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',1,12,150
 SELECT * FROM SalesByDay;
 
 
-
+SELECT CITY, 
+    MONTH, 
+    sum(Amount) AS Monthly_Sum_Per_City, 
+    avg(sum(Amount)) OVER --AVG is executed on the result of the SUM and executed in a partition
+    (
+        PARTITION BY City
+        ORDER BY Month
+        ROWS 2 PRECEDING
+    ) AS Average
+FROM SalesByDay
+GROUP BY City, Month;
 
 
 
