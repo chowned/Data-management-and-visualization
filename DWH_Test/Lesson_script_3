@@ -1,0 +1,47 @@
+
+CREATE TABLE SalesByDay(  
+    City VARCHAR(255) NOT NULL ,
+    Day INT NOT NULL,
+    Month INT NOT NULL ,
+    Amount INT
+    
+);
+ALTER TABLE SalesByDay
+ADD CONSTRAINT pk_SalesByDay PRIMARY KEY(City, Month,Day);
+
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',1,7,55);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',9,7,5);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',3,8,4);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',25,8,6);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',18,9,30);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',29,9,60);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',5,10,20);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',17,10,60);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',13,11,1);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',5,11,39);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',22,12,132);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Milano',23,12,8);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',1,7,20);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',2,7,50);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',5,8,1);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',25,8,29);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',15,9,55);
+
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',30,9,25);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',18,10,10);
+
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',28,10,90);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',9,11,10);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',19,11,25);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',1,11,15);
+INSERT INTO `SalesByDay`(`City`,`Day`,`Month`,`Amount`) VALUES('Torino',1,12,150);
+
+
+SELECT * FROM SalesByDay;
+
+
+
+
+
+
+
