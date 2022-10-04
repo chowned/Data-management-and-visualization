@@ -1,0 +1,10 @@
+--Adding comment here for writing requirements
+
+SELECT city,
+    month,
+    amount,
+    SUM(amount) OVER 
+        (PARTITION BY City
+        ORDER BY Month
+        ROWS UNBOUNDED PRECEDING) AS CumulSum
+FROM `Sales`
