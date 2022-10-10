@@ -33,5 +33,5 @@ AND
 V.Shop = S.idShop
 AND
 V.Year=2000
---GROUP BY ROLLUP (City);
+--GROUP BY ROLLUP (City, Month, idShop);
 GROUP BY City , Month, idShop with ROLLUP; --I'm using MariaDB
