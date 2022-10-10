@@ -41,6 +41,8 @@ order by dated
 rows 2 preceding)
 from `SalesEX1`;
 
+--average over current and two previous rows
+
 select city, 
 dated,
 amount,
@@ -49,3 +51,19 @@ order by dated
 rows 2 preceding)
 from `SalesEX1`
 order by city;
+
+
+-- pag6 query
+-- average over current row and sales of two previous days
+
+select 
+dated
+amount,
+avg (amount) over (partition by city
+order by dated
+range between interval '2' day 
+preceding and current row
+)
+as Last3DaysAverage
+from `SalesEX1`
+order by dated;
