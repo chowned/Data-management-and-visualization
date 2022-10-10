@@ -32,3 +32,11 @@ INSERT INTO `SalesEX1`(city,dated,amount) VALUES('ROME','10-10-22',120);
 INSERT INTO `SalesEX1`(city,dated,amount) VALUES('ROME','11-10-22',240);
 INSERT INTO `SalesEX1`(city,dated,amount) VALUES('ROME','12-10-22',350);
 INSERT INTO `SalesEX1`(city,dated,amount) VALUES('ROME','14-10-22',470);
+
+select city, 
+dated,
+amount,
+avg (amount) over (partition by city
+order by dated
+rows 2 preceding)
+from `SalesEX1`;
