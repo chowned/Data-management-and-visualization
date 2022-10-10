@@ -1,4 +1,4 @@
---ranking script
+--ranking query
 
 select city, amount,
 rank() over (order by amount desc)
