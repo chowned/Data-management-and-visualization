@@ -1,0 +1,7 @@
+--ranking script
+
+select city, amount,
+rank() over (order by amount desc)
+as ranking
+FROM `Sales`
+where month=12;
