@@ -15,3 +15,23 @@ as ranking
 FROM `Sales`
 where month=12
 ORDER BY City;
+
+-- GROUP BY EXTENSION
+-- ROLLUP
+--
+
+ALTER TABLE `SalesByDay` 
+    ADD COLUMN Shop int COMMENT 'Adding a column to connect to shops';
+    
+ALTER TABLE `SalesByDay` 
+    ADD COLUMN YEAR int;
+    
+select city, T.Month, idShop --in lesson was product key
+FROM `SalesByDay` V, `DimCalendar` T, `Shop` S
+where V.Month = T.Month
+AND
+V.Shop = S.idShop
+AND
+V.Year=2000
+--GROUP BY ROLLUP (City);
+GROUP BY City , Month, idShop with ROLLUP; --I'm using MariaDB
