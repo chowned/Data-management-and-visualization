@@ -1,4 +1,4 @@
---ranking query
+-- RANK() is useful when we want to rank the results of a query
 
 select city, amount,
 rank() over (order by amount desc)
