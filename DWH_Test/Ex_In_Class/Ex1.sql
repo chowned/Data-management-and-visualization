@@ -40,3 +40,12 @@ avg (amount) over (partition by city
 order by dated
 rows 2 preceding)
 from `SalesEX1`;
+
+select city, 
+dated,
+amount,
+avg (amount) over (partition by city
+order by dated
+rows 2 preceding)
+from `SalesEX1`
+order by city;
