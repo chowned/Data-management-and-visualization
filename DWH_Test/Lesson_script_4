@@ -7,6 +7,7 @@ FROM `Sales`
 where month=12;
 
 -- first all query is executed, then it is sorted by alphabetical order of City
+-- assumption: ascending order if not specified
 
 select city, amount,
 rank() over (order by amount desc)
